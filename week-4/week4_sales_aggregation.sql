@@ -85,3 +85,83 @@ ORDER BY kuu;
 -- Väikseima kogukäibega kuu oli jaanuar (85 618,65 €).
 -- Suurim kuine kasv toimus detsembris (+54,3%), samas kui suurim langus oli septembris (-24,6%).
 -- Juhatusele soovitan kasutada aasta lõpu tugevat hooajalisust kampaaniate ja varude planeerimisel.
+
+-- ==========================================
+-- Ülesanne 4 – Turunduskanalite tulemuslikkus
+-- ==========================================
+
+WITH puhastatud_logid AS (
+    SELECT
+        log_id,
+        customer_id,
+        visit_date,
+        CASE
+            WHEN LOWER(TRIM(source)) IN (
+                'google organic',
+                'google_organic'
+            ) THEN 'Google Organic'
+
+            WHEN LOWER(TRIM(source)) IN (
+                'google',
+                'google_ads'
+            ) THEN 'Google'
+
+            WHEN LOWER(TRIM(source)) IN (
+                'facebook',
+                'fb'
+            ) THEN 'Facebook'
+
+            WHEN LOWER(TRIM(source)) IN (
+                'facebook ads',
+                'facebook_ads',
+                'fb_ads'
+            ) THEN 'Facebook Ads'
+
+            WHEN LOWER(TRIM(source)) IN (
+                'instagram',
+                'ig'
+            ) THEN 'Instagram'
+
+            WHEN LOWER(TRIM(source)) IN (
+                'instagram_ads',
+                'ig_ads'
+            ) THEN 'Instagram Ads'
+
+            WHEN source IS NULL THEN 'Tundmatu kanal'
+
+            ELSE INITCAP(REPLACE(TRIM(source), '_', ' '))
+        END AS turunduskanal
+    FROM web_logs
+    WHERE customer_id IS NOT NULL
+),
+
+kliendi_viimane_kanal AS (
+    SELECT
+        customer_id,
+        turunduskanal,
+        ROW_NUMBER() OVER (
+            PARTITION BY customer_id
+            ORDER BY visit_date DESC, log_id DESC
+        ) AS koht
+    FROM puhastatud_logid
+)
+
+SELECT
+    COALESCE(kvk.turunduskanal, 'Tundmatu kanal') AS turunduskanal,
+    COUNT(DISTINCT s.customer_id) AS kliente,
+    COUNT(DISTINCT s.invoice_id) AS tellimusi,
+    ROUND(SUM(s.total_price), 2) AS kogukaive,
+    ROUND(AVG(s.total_price), 2) AS keskmine_tellimus
+FROM sales s
+LEFT JOIN kliendi_viimane_kanal kvk
+    ON s.customer_id = kvk.customer_id
+   AND kvk.koht = 1
+GROUP BY COALESCE(kvk.turunduskanal, 'Tundmatu kanal')
+ORDER BY kogukaive DESC;
+
+-- Turunduse kokkuvõte
+-- Turunduskanalite nimetused vajasid enne analüüsi ühtlustamist.
+-- Igale kliendile määrati tema viimane teadaolev turunduskanal,
+-- et sama müüki ei arvestataks mitme veebikülastuse tõttu korduvalt.
+-- Kõrgeima kogukäibega kanal selgub puhastatud tulemuste võrdlemisel.
+-- Tundmatu kanaliga ostud viitavad vajadusele parandada turundusallika salvestamist.
