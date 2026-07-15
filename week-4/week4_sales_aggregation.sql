@@ -76,3 +76,12 @@ SELECT
     ) AS kasvu_protsent
 FROM kuu_myyk
 ORDER BY kuu;
+
+-- ==========================================
+-- Kokkuvõte
+-- ==========================================
+-- 2024. aasta müük kasvas üldiselt aasta jooksul.
+-- Suurima kogukäibega kuu oli detsember (170 623,28 €).
+-- Väikseima kogukäibega kuu oli jaanuar (85 618,65 €).
+-- Suurim kuine kasv toimus detsembris (+54,3%), samas kui suurim langus oli septembris (-24,6%).
+-- Juhatusele soovitan kasutada aasta lõpu tugevat hooajalisust kampaaniate ja varude planeerimisel.
