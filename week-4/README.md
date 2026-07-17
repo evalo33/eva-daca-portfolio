@@ -2,29 +2,18 @@
 
 ## Grupitöö
 
-Nädala eesmärk oli kasutada SQL agregatsioonifunktsioone (GROUP BY, HAVING, CTE ja LAG), et analüüsida UrbanStyle Ltd müügiandmeid ning koostada juhtkonnale ülevaade ettevõtte müügitulemustest.
+Nädala eesmärk oli kasutada SQL agregatsioonifunktsioone, et analüüsida UrbanStyle Ltd müügiandmeid ja koostada juhtkonnale ülevaade.
 
-### Minu roll
+## Minu roll
 
-Minu vastutusalaks oli **Roll A – Müügi koondandmed**.
+Minu vastutusalaks oli **Roll A – müügi koondandmed**.
 
-Lahendasin järgmised ülesanded:
+Detailsem kirjeldus, SQL-päringud ja tulemused asuvad kaustas `team/`.
 
-- Müük kuude lõikes (2024)
-- Müük kategooriate lõikes
-- CTE ja LAG funktsioonidega kuiste müügitrendide analüüs
+## Minu õpikogemus
 
-### Peamised tulemused
+Õppisin kasutama SQL-i agregeerimisfunktsioone ja koostama kokkuvõtteid müügiandmete põhjal. Harjutasin `GROUP BY`, `HAVING`, CTE ja `LAG()` kasutamist ning õppisin analüüsima müügikäivet kuude ja tootekategooriate lõikes.
 
-- 2024\. aasta kogukäive: **1 470 358,02 €**
-- Kõrgeim käive: **detsember**
-- Madalaim käive: **jaanuar**
-- Suurima käibega kategooria: **meeste riided**
-- Suurim kuine kasv: **detsember (+54,3%)**
-- Suurim kuine langus: **september (−24,6%)**
+Kõige keerulisem oli valida tellimuste loendamiseks õige väli. Sain aru, et `COUNT(DISTINCT invoice_id)` annab õige tellimuste arvu, sest üks tellimus võib sisaldada mitut müügirida.
 
-### Kausta sisu
-
-- `team/README.md` – grupitöö kirjeldus
-- `team/week4_sales_aggregation.sql` – SQL päringud
-- `team/Esitlus/` – esitlusmaterjalid
+Samuti õppisin kontrollima SQL-päringute tulemusi, et veenduda nende korrektsuses, ning koostama analüüsi põhjal lühikesi ärilisi järeldusi.
