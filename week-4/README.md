@@ -1,32 +1,30 @@
 # Nädal 4 – SQL agregatsioonid
 
-## Roll A – Müügi analüüs
+## Grupitöö
 
-### Eesmärk
+Nädala eesmärk oli kasutada SQL agregatsioonifunktsioone (GROUP BY, HAVING, CTE ja LAG), et analüüsida UrbanStyle Ltd müügiandmeid ning koostada juhtkonnale ülevaade ettevõtte müügitulemustest.
 
-Selle ülesande eesmärk oli kasutada SQL agregatsioonifunktsioone (GROUP BY, HAVING, CTE ja LAG), et analüüsida UrbanStyle.ltd müügiandmeid ning leida ärilisi mustreid.
+### Minu roll
 
-## Minu töö
+Minu vastutusalaks oli **Roll A – Müügi koondandmed**.
 
 Lahendasin järgmised ülesanded:
 
-- Müük kuude kaupa (2024)
-- Müük kategooriate kaupa
-- CTE ja LAG funktsiooniga kuise müügitrendi analüüs
+- Müük kuude lõikes (2024)
+- Müük kategooriate lõikes
+- CTE ja LAG funktsioonidega kuiste müügitrendide analüüs
 
-## Peamised tähelepanekud
+### Peamised tulemused
 
-- 2024. aasta müük kasvas aasta jooksul ning saavutas kõrgeima taseme detsembris.
-- Suurima kogumüügiga kategooria oli jalanõud.
-- Meeste riided olid kogumüügi poolest teisel kohal.
-- Septembris toimus suurim kuine langus, detsembris aga suurim kasv.
+- 2024. aasta kogukäive: **1 470 358,02 €**
+- Kõrgeim käive: **detsember**
+- Madalaim käive: **jaanuar**
+- Suurima käibega kategooria: **meeste riided**
+- Suurim kuine kasv: **detsember (+54,3%)**
+- Suurim kuine langus: **september (−24,6%)**
 
-## Grupitöö
+### Kausta sisu
 
-Töö valmis koostöös meeskonnaga. Minu vastutusalaks oli Roll A – müügiandmete agregatsioon ja trendide analüüs.
-
-Grupi GitHubi link: (lisatakse pärast grupitöö valmimist)
-
-- Turunduskanalite tulemuslikkuse analüüs ja kanalite nimetuste ühtlustamine
-- Turundusandmetes esines sama kanali kohta erinevaid kirjapilte ja puuduvaid väärtusi.
-- Usaldusväärsema tulemuse saamiseks määrasin igale kliendile tema viimase teadaoleva turunduskanali.
+- `team/README.md` – grupitöö kirjeldus
+- `team/week4_sales_aggregation.sql` – SQL päringud
+- `team/Esitlus/` – esitlusmaterjalid
