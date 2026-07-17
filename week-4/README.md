@@ -16,7 +16,7 @@ Lahendasin järgmised ülesanded:
 
 ### Peamised tulemused
 
-- 2024. aasta kogukäive: **1 470 358,02 €**
+- 2024\. aasta kogukäive: **1 470 358,02 €**
 - Kõrgeim käive: **detsember**
 - Madalaim käive: **jaanuar**
 - Suurima käibega kategooria: **meeste riided**
