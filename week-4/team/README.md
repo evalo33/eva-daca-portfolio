@@ -24,7 +24,7 @@ Minu vastutusalaks oli **Roll A – Müügi koondandmed**.
 
 Lahendasin järgmised analüüsid:
 
-- 2024. aasta müügikäive kuude lõikes
+- 2024\. aasta müügikäive kuude lõikes
 - Müügikäive kategooriate lõikes
 - Kuise müügitrendi analüüs CTE ja LAG() abil
 - Juhtkonnale peamiste müügitulemuste kokkuvõtte koostamine
@@ -33,7 +33,7 @@ Lahendasin järgmised analüüsid:
 
 ## Peamised tulemused
 
-- 2024. aasta kogukäive oli **1 470 358,02 €**.
+- 2024\. aasta kogukäive oli **1 470 358,02 €**.
 - Kõrgeim käive saavutati **detsembris (170 623,28 €)**.
 - Madalaim käive oli **jaanuaris (85 618,65 €)**.
 - Suurima käibega kategooria olid **meeste riided (389 738,54 €)**.
